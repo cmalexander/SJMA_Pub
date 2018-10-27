@@ -56,6 +56,12 @@ Cover page layout. This controls the home page of the publication.
 
   <section class="section quire-page__content" id="content">
     <div class="container is-fluid">
+      <div class="quire-contents-list grid">
+        <div class="menu-list">
+          {{ $scope := .Site.Pages }}
+          {{- partial "contents-list.html" (dict "contentsScope" $scope "contentsType" .Site.Params.tocType "contentsLocation" ".Params.toc" "contentsPage" . ) -}}
+        </div>
+      </div>
       {{ with .Content }}
       <div class="content">
         {{ . }}
