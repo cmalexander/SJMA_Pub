@@ -53,20 +53,19 @@ Cover page layout. This controls the home page of the publication.
   </section>
   {{/* End full-page cover section */}}
   {{/* Begin "below-the-fold" section */}}
-  {{ with .Content }}
 
   <section class="section quire-page__content" id="content">
     <div class="container is-fluid">
+      {{ with .Content }}
       <div class="content">
         {{ . }}
       </div>
+      {{ end }}
       <div class="has-text-centered">
         <a class="button is-medium quire-cover__button" href="/contents">Start reading {{- template "image-control-icon" (dict "type" "right-arrow" "description" "Go to next page" "imageDir" ($.Scratch.Get "imageDir") ) -}}</a>
       </div>
     </div>
   </section>
-
-  {{ end }}
 
   <footer class="footer quire-cover-footer remove-from-epub">
     <div class="container is-fluid">
